@@ -11,8 +11,8 @@ body {
 
 /* Main marketing message and sign up button */
 .jumbotron {
+  margin-top: 25px;
   text-align: center;
-  background-color: transparent;
 }
 .jumbotron .btn {
   padding: 14px 24px;
@@ -46,7 +46,8 @@ body {
 .nav-justified > .active > a,
 .nav-justified > .active > a:hover,
 .nav-justified > .active > a:focus {
-  background-color: #ddd;
+  background-color: rgb(220,0,17);
+  color: white;
   background-image: none;
   box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
 }
