@@ -13,6 +13,48 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?v=3.exp">
+    </script>
+    <script type="text/javascript">
+
+function initialize() {
+  var myLatlng = new google.maps.LatLng(49.763986, 19.073413);
+  var mapOptions = {
+    zoom: 18,
+    center: myLatlng
+  };
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  var contentString = '<ul class="list-unstyled">'
+            +'<li><strong>Biuro Rachunkowe - BHP, kadry, płace Beata Firganek</strong></li>'
+            +'<li>ul. Szczyrkowska 71</li>'
+            +'<li>43-360 Bystra</li>'
+            +'<li>tel.: 696-716-809</li>'
+            +'<li>email:</li>'
+            +'<li><a href="mailto:b.firganek@op.pl">b.firganek@op.pl</a></li>'
+            +'<li><a href="mailto:bhp-kadry.com.pl">bhp-kadry.com.pl</a></li>'
+          +'</ul>';
+
+  var infowindow = new google.maps.InfoWindow({
+      content: contentString
+  });
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Biuro Rachunkowe - BHP, kadry, płace Beata Firganek'
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+  });
+  infowindow.open(map,marker);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+  </script>
   </head>
   <body>
     <div class="container">
@@ -23,6 +65,24 @@
           <li><a href="oferta.html">Oferta</a></li>
           <li class="active"><a href="#">Kontakt</a></li>
         </ul>
+      </div>
+      <div class="page-header">
+        <h2>Kontakt</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-2">
+          <ul class="list-unstyled">
+            <li><strong>Biuro Rachunkowe - BHP, kadry, płace Beata Firganek</strong></li>
+            <li>ul. Szczyrkowska 71</li>
+            <li>43-360 Bystra</li>
+            <li>tel.: 696-716-809</li>
+            <li>email:</li>
+            <li><a href="mailto:b.firganek@op.pl">b.firganek@op.pl</a></li>
+            <li><a href="mailto:biuro@bhp-kadry.com.pl">biuro@bhp-kadry.com.pl</a></li>
+          </ul>
+        </div>
+        <div id="map-canvas" class="col-lg-9 img-thumbnail" >
+      </div>
       </div>
       <div class="footer">
         <p>&copy; bhp-kadry.com.pl 2014</p>
